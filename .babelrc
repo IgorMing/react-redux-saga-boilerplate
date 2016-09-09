@@ -27,7 +27,7 @@
       ]
     },
     "test": {
-      "plugins": ["istanbul"]
+      "sourceMaps": "both"
     }
   }
 }

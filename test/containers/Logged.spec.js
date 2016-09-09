@@ -1,14 +1,11 @@
-import expect, { createSpy } from 'expect';
 import React from 'react';
 import { mount } from 'enzyme';
 
 import Logged from 'containers/Logged';
 
-const dispatch = createSpy();
-
 function setup() {
   const props = {
-    dispatch,
+    dispatch: () => {},
     location: {}
   };
 
@@ -19,7 +16,7 @@ describe('Logged', () => {
   const wrapper = setup(true);
 
   it('should be a Component', () => {
-    expect(wrapper.instance()).toBeA(React.Component);
+    expect(wrapper.instance() instanceof React.Component).toBe(true);
   });
 
   it('should render properly', () => {

@@ -1,25 +1,17 @@
-import expect, { createSpy } from 'expect';
 import React from 'react';
 import { mount } from 'enzyme';
 
 import Footer from 'components/Footer';
 
-const dispatch = createSpy();
-
 function setup() {
-  const props = {
-    app: {},
-    dispatch
-  };
-
-  return mount(<Footer {...props} />);
+  return mount(<Footer />);
 }
 
 describe('Footer', () => {
   const wrapper = setup();
 
   it('should be a Component', () => {
-    expect(wrapper.instance()).toBeA(React.Component);
+    expect(wrapper.instance() instanceof React.Component).toBe(true);
   });
 
   it('should render properly', () => {
